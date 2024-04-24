@@ -4,8 +4,9 @@ import carIcon from "/VS CODE Projekt/CarBider_Frontend/carbiderfrontend/src/ass
 function Navbar() {
   return (
     <>
-      <div class="flex justify-center mt-4 mb-10">
+      <div class="flex ml-10 mt-4 mb-10">
         <a class="font-bold text-4xl pr-2">Car Bidder</a>
+        
         <img src={carIcon} alt="Navbar Icon" width={45} />
       </div>
     </>
