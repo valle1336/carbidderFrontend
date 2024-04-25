@@ -9,12 +9,13 @@ function HomePage() {
     const jsonData = await response.json();
 
     setAllCars(jsonData);
-    console.log(allCars);
   };
 
   useEffect(() => {
     fetchAllCars();
   }, []);
+
+  console.log(allCars);
 
   return (
     <>
