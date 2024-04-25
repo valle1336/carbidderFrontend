@@ -13,13 +13,13 @@ function Navbar() {
         <div className="flex justify-end w-screen">
           <ul className="flex items-center font-bold">
             <li className="mr-6">
-              <Link to="/createAd">Create</Link>
+              <Link to="/Create">Create</Link>
             </li>
             <li className="mr-6">
-              <Link to="/myCars">My Cars</Link>
+              <Link to="/MyCars">My Cars</Link>
             </li>
             <li className="mr-6">
-              <Link to="/myProfile">Profile</Link>
+              <Link to="/MyProfile">Profile</Link>
             </li>
           </ul>
         </div>
