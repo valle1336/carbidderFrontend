@@ -7,10 +7,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
-import HomePage from "./components/views/HomePage";
-import Create from "./components/views/Create";
-import MyCars from "./components/views/MyCars";
-import MyProfile from "./components/views/MyProfile";
+import HomePage from "./views/HomePage";
+import Create from "./views/Create";
+import MyCars from "./views/MyCars";
+import MyProfile from "./views/MyProfile";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
