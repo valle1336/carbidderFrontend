@@ -7,9 +7,14 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
+import HomePage from "./components/views/HomePage";
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<RootLayout />}></Route>)
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route path="/" element={<HomePage />} />
+    </Route>
+  )
 );
 
 function App() {

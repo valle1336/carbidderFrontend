@@ -1,23 +1,8 @@
 import React, { useState } from "react";
-import carIcon from "/VS CODE Projekt/CarBider_Frontend/carbiderfrontend/src/assets/icons/sport-car.png";
+import carIcon from "/Users/Alex Paulsson/VSCode Projekt/carbiderfrontend/src/assets/icons/sport-car.png";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 function Navbar() {
-  const [allCars, setAllCars] = useState();
-
-  const fetchAllCars = async () => {
-    const response = await fetch("http://localhost:8080/getAllCars");
-    const jsonData = await response.json();
-
-    setAllCars(jsonData);
-    console.log(allCars);
-  };
-
-  useEffect(() => {
-    fetchAllCars();
-  }, []);
-
   return (
     <>
       <div class="flex items-center mt-4 mb-10 border-b border-gray-600">
