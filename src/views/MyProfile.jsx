@@ -1,34 +1,39 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function MyProfile() {
-  const [myUser, setMyUser] = useState([]);
-
-  const fetchMyUser = async () => {
-    const response = await fetch("http://localhost:8080/users/myProfile/353");
-    const jsonData = await response.json();
-
-    setMyUser(jsonData);
-  };
+  const { id } = useParams();
+  const [myUser, setMyUser] = useState();
 
   useEffect(() => {
-    fetchMyUser();
-  }, []);
+    const fetchUser = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:8080/users/myProfile/${id}`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch user");
+        }
+        const data = await response.json();
+        setMyUser(data);
+      } catch (error) {
+        console.error("Error fetching user:", error);
+      }
+    };
 
-  console.log(myUser);
+    fetchUser();
+  }, [id]);
 
   return (
     <>
       <div>My Profile Page!</div>
-      <ul>
-        {myUser.map((user) => (
-          <li key={user.id}>
-            <p>{user.username}</p>
-            <p>{user.role}</p>
-            <p>{user.points}</p>
-          </li>
-        ))}
-      </ul>
+      {myUser && ( //Koden efter && körs enbart om värderna inte är undefined och är det undefined ignoreras det helt.
+        <div>
+          <h2>User Details</h2>
+          <p>Username: {myUser.username}</p>
+        </div>
+      )}
     </>
   );
 }
