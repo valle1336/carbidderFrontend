@@ -12,6 +12,7 @@ import Create from "./views/Create";
 import MyCars from "./views/MyCars";
 import MyProfile from "./views/MyProfile";
 import ViewCar from "./views/ViewCar";
+import LogIn from "./views/LogIn";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route path="/MyCars" element={<MyCars />} />
       <Route path="/MyProfile/:id" element={<MyProfile />} />
       <Route path="/ViewCar/:id" element={<ViewCar />} />
+      <Route path="/LogIn" element={<LogIn />} />
     </Route>
   )
 );
