@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const [allCars, setAllCars] = useState([]);
@@ -22,12 +23,14 @@ function HomePage() {
       <div>Hejsan från homepage</div>
       <ul>
         {allCars.map((car) => (
-          <li key={car.id}>
-            <p>Title: {car.title}</p>
-            <p>Description: {car.description}</p>
-            <p>Current Bid: {car.currentBid}</p>
-            <p>Buyout price: {car.buyOutPrice}</p>
-          </li>
+          <Link to={`/ViewCar/${car.id}`}>
+            <li key={car.id}>
+              <p>Title: {car.title}</p>
+              <p>Description: {car.description}</p>
+              <p>Current Bid: {car.currentBid}</p>
+              <p>Buyout price: {car.buyOutPrice}</p>
+            </li>
+          </Link>
         ))}
       </ul>
     </>
