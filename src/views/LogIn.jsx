@@ -40,7 +40,7 @@ function LogIn() {
     <>
 <div className="flex justify-center">
   <div className="bg-slate-200 p-8 rounded-lg shadow-md w-96">
-    <h2 className="text-2xl font-semibold mb-6">Register</h2>
+    <h2 className="text-2xl font-semibold mb-6">Log in</h2>
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <label htmlFor="username" className="block text-sm font-medium text-gray-700">Username</label>
@@ -65,6 +65,8 @@ function LogIn() {
         />
       </div>
       <button type="submit" className="bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">Sign in!</button>
+      <br />
+        <Link to={"/register"}>Do not have an account? Register</Link>
     </form>
   </div>
   </div>
